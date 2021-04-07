@@ -30,23 +30,23 @@
     ],
     "env": [
       {
-        "name": "EULA",
         "label": "EULA",
+        "name": "EULA",
         "default": "TRUE"
       },
       {
-        "name": "MAX_MEMORY",
         "label": "MAX_MEMORY",
+        "name": "MAX_MEMORY",
         "default": "8G"
       },
 	  {
-        "name": "TYPE",
         "label": "TYPE",
+        "name": "TYPE",
         "default": "CURSEFORGE"
       },
       {
-        "name": "CF_SERVER_MOD",
         "label": "CF_SERVER_MOD",
+        "name": "CF_SERVER_MOD",
         "default": "/modpacks/SERVER-FILES.zip"
       }
     ]
@@ -81,18 +81,18 @@
     ],
     "env": [
 	    {
-				"name": "Reverse Proxy Domain",
-				"label": "VIRTUAL_HOST",
+				"label": "Reverse Proxy Domain",
+				"name": "VIRTUAL_HOST",
 				"default": "deemix.!domain"
 			},
 			{
-				"name": "Reverse Proxy Port",
-				"label": "VIRTUAL_PORT",
+				"label": "Reverse Proxy Port",
+				"name": "VIRTUAL_PORT",
 				"default": "6595"
 			},
 			{
-				"name": "Let's encrypt Domain",
-				"label": "LETSENCRYPT_HOST",
+				"label": "Let's encrypt Domain",
+				"name": "LETSENCRYPT_HOST",
 				"default": "deemix.!domain"
 			}
 		],
