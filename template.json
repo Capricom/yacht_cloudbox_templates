@@ -1,7 +1,7 @@
 [
   {
     "type": 1,
-    "title": "Minecraft Modpack,
+    "title": "Minecraft Modpack",
     "name": "minecraft modpack",
     "description": "Run Minecraft modpacks from curseforge. Download the server zip, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env.",
     "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/airsonic-logo.png",
@@ -37,6 +37,7 @@
         "label": "MAX_MEMORY",
         "default": "8G"
       },
+	  {
         "name": "TYPE",
         "label": "TYPE",
         "default": "CURSEFORGE"
