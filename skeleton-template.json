@@ -1,0 +1,42 @@
+[
+  {
+    "type": 1,
+    "title": "TITLE",
+    "name": "NAME",
+    "description": "DESCRIPTION",
+    "logo": "LOGO.png",
+    "categories": [
+      "CATEGORY"
+    ],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "port name": "80:80/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/data",
+        "bind": "/HOST/data"
+      },
+      {
+        "container": "/config",
+        "bind": "/HOST/config",
+        "readonly": "true"
+      }
+    ],
+    "env": [
+      {
+        "name": "NAME",
+        "label": "LABEL",
+        "default": "VALUE"
+      },
+      {
+        "name": "EXAMPLE",
+        "label": "EXAMPLE",
+        "default": "VALUE"
+      }
+    ]
+  }
+]
