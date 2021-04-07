@@ -6,6 +6,7 @@
     "description": "Run Minecraft modpacks from curseforge. Download the server zip, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env.",
     "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/MinecraftModpack.png",
     "image": "itzg/minecraft-server",
+		"network": "cloudbox",
     "categories": [
       "Gaming"
     ],
@@ -57,6 +58,7 @@
     "description": "Deemix is a deezer downloader built from the ashes of Deezloader Remix.",
     "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/deemix.png",
     "image": "registry.gitlab.com/bockiii/deemix-docker",
+		"network": "cloudbox",
     "categories": [
       "Music"
     ],
