@@ -1,0 +1,51 @@
+[
+  {
+    "type": 1,
+    "title": "Minecraft Modpack,
+    "name": "minecraft modpack",
+    "description": "Run Minecraft modpacks from curseforge. Download the server zip, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env.",
+    "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/airsonic-logo.png",
+    "categories": [
+      "Gaming"
+    ],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "Server port": "25565:25565/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/data",
+        "bind": "!config/y_minecraft/MODPACKNAME"
+      },
+      {
+        "container": "/modpacks",
+        "bind": "!config/y_minecraft/modpacks/",
+        "readonly": "true"
+      }
+    ],
+    "env": [
+      {
+        "name": "EULA",
+        "label": "EULA",
+        "default": "TRUE",
+      },
+      {
+        "name": "MAX_MEMORY",
+        "label": "MAX_MEMORY",
+        "default": "8G"
+      },
+        "name": "TYPE",
+        "label": "TYPE",
+        "default": "CURSEFORGE"
+      },
+      {
+        "name": "CF_SERVER_MOD",
+        "label": "CF_SERVER_MOD",
+        "default": "/modpacks/SERVER-FILES.zip"
+      }
+    ]
+  }
+]
