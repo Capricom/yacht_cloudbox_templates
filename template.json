@@ -5,6 +5,7 @@
     "name": "minecraft modpack",
     "description": "Run Minecraft modpacks from curseforge. Download the server zip, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env.",
     "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/MinecraftModpack.png",
+    "image": "itzg/minecraft-server",
     "categories": [
       "Gaming"
     ],
@@ -48,5 +49,51 @@
         "default": "/modpacks/SERVER-FILES.zip"
       }
     ]
+  },
+    {
+    "type": 1,
+    "title": "DeeMix",
+    "name": "deemix",
+    "description": "Deemix is a deezer downloader built from the ashes of Deezloader Remix.",
+    "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/deemix.png",
+    "image": "registry.gitlab.com/bockiii/deemix-docker",
+    "categories": [
+      "Music"
+    ],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "6595:6595/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/config",
+        "bind": "!config/y_DeeMix"
+      },
+      {
+        "container": "/downloads",
+        "bind": "!music"
+      }
+    ],
+    "env": [
+	    {
+				"name": "Reverse Proxy Domain",
+				"label": "VIRTUAL_HOST",
+				"default": "deemix.!domain"
+			},
+			{
+				"name": "Reverse Proxy Port",
+				"label": "VIRTUAL_PORT",
+				"default": "6595"
+			},
+			{
+				"name": "Let's encrypt Domain",
+				"label": "LETSENCRYPT_HOST",
+				"default": "deemix.!domain"
+			}
+		],
+    "note": "Deemix may take a few minutes to install. Be sure to check the logs for details. Refer to <a href='https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken'>this page</a> for userToken details."
   }
 ]
