@@ -28,6 +28,11 @@
     ],
     "env": [
       {
+        "name": "EULA",
+        "label": "EULA",
+        "default": "TRUE"
+      },
+      {
         "name": "MAX_MEMORY",
         "label": "MAX_MEMORY",
         "default": "8G"
