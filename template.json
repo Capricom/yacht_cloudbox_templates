@@ -3,7 +3,7 @@
     "type": 1,
     "title": "Minecraft Modpack",
     "name": "minecraft modpack",
-    "description": "Run Minecraft modpacks from curseforge. Download the server zip, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env.",
+    "description": "Run Minecraft modpacks from curseforge.",
     "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/MinecraftModpack.png",
     "image": "itzg/minecraft-server",
 		"network": "cloudbox",
@@ -49,7 +49,8 @@
         "name": "CF_SERVER_MOD",
         "default": "/modpacks/SERVER-FILES.zip"
       }
-    ]
+    ],
+		"note": "Download the server zip into !config/y_minecraft/modpacks, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env."
   },
     {
     "type": 1,
