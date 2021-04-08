@@ -6,10 +6,8 @@
     "description": "Run Minecraft modpacks from curseforge.",
     "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/MinecraftModpack.png",
     "image": "itzg/minecraft-server",
-		"network": "cloudbox",
-    "categories": [
-      "Gaming"
-    ],
+    "network": "cloudbox",
+    "categories": ["Gaming"],
     "platform": "linux",
     "restart_policy": "unless-stopped",
     "ports": [
@@ -39,7 +37,7 @@
         "name": "MAX_MEMORY",
         "default": "8G"
       },
-	  {
+      {
         "label": "TYPE",
         "name": "TYPE",
         "default": "CURSEFORGE"
@@ -50,19 +48,17 @@
         "default": "/modpacks/SERVER-FILES.zip"
       }
     ],
-		"note": "Download the server zip into !config/y_minecraft/modpacks, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env."
+    "note": "Download the server zip into !config/y_minecraft/modpacks, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env."
   },
-    {
+  {
     "type": 1,
     "title": "DeeMix",
     "name": "deemix",
     "description": "Deemix is a deezer downloader built from the ashes of Deezloader Remix.",
     "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/deemix.png",
     "image": "registry.gitlab.com/bockiii/deemix-docker",
-		"network": "cloudbox",
-    "categories": [
-      "Music"
-    ],
+    "network": "cloudbox",
+    "categories": ["Music"],
     "platform": "linux",
     "restart_policy": "unless-stopped",
     "ports": [
@@ -81,22 +77,143 @@
       }
     ],
     "env": [
-	    {
-				"label": "Reverse Proxy Domain",
-				"name": "VIRTUAL_HOST",
-				"default": "deemix.!domain"
-			},
-			{
-				"label": "Reverse Proxy Port",
-				"name": "VIRTUAL_PORT",
-				"default": "6595"
-			},
-			{
-				"label": "Let's encrypt Domain",
-				"name": "LETSENCRYPT_HOST",
-				"default": "deemix.!domain"
-			}
-		],
+      {
+        "label": "Reverse Proxy Domain",
+        "name": "VIRTUAL_HOST",
+        "default": "deemix.!domain"
+      },
+      {
+        "label": "Reverse Proxy Port",
+        "name": "VIRTUAL_PORT",
+        "default": "6595"
+      },
+      {
+        "label": "Let's encrypt Domain",
+        "name": "LETSENCRYPT_HOST",
+        "default": "deemix.!domain"
+      }
+    ],
     "note": "Deemix may take a few minutes to install. Be sure to check the logs for details. Refer to <a href='https://notabug.org/RemixDevs/DeezloaderRemix/wiki/Login+via+userToken'>this page</a> for userToken details."
+  },
+  {
+    "type": 1,
+    "title": "Transmission-VPN",
+    "name": "transmission-vpn",
+    "description": "Transmission torrent client with WebUI and VPN.",
+    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/Transmission.png",
+    "image": "haugene/docker-transmission-openvpn",
+    "network": "cloudbox",
+    "categories": ["Torrent", "Download"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "volumes": [
+      {
+        "container": "/data",
+        "bind": "!downloads/torrents/transmission"
+      },
+      {
+        "container": "/config",
+        "bind": "!config/y_transmission-vpn"
+      },
+      {
+        "container": "/downloads/torrents",
+        "bind": "!downloads/torrents"
+      },
+      {
+        "container": "!localtime",
+        "bind": "!localtime"
+      },
+      {
+        "container": "/etc/transmission",
+        "bind": "!downloads/torrents/transmission/etc"
+      }
+    ],
+    "env": [
+      {
+        "label": "Login username",
+        "name": "TRANSMISSION_RPC_USERNAME",
+        "default": "!username"
+      },
+      {
+        "label": "Login password",
+        "name": "TRANSMISSION_RPC_PASSWORD",
+        "default": "!password"
+      },
+      {
+        "label": "WebUI Port",
+        "name": "TRANSMISSION_RPC_PORT",
+        "default": "9091"
+      },
+      {
+        "label": "WebUI to use",
+        "name": "TRANSMISSION_WEB_UI",
+        "default": "flood"
+      },
+      {
+        "label": "User ID",
+        "name": "PUID",
+        "default": "!PUID"
+      },
+      {
+        "label": "Group ID",
+        "name": "PGID",
+        "default": "!PGID"
+      },
+      {
+        "label": "VPN Provider",
+        "name": "OPENVPN_PROVIDER",
+        "default": "PIA"
+      },
+      {
+        "label": "VPN Options",
+        "name": "OPENVPN_OPTS",
+        "default": "--inactive 3600 --ping 10 --ping-exit 60"
+      },
+      {
+        "label": "VPN Username",
+        "name": "OPENVPN_USERNAME",
+        "default": "!vpn_username"
+      },
+      {
+        "label": "VPN Password",
+        "name": "OPENVPN_PASSWORD",
+        "default": "!vpn_password"
+      },
+      {
+        "label": "Download directory",
+        "name": "TRANSMISSION_DOWNLOAD_DIR",
+        "default": "/downloads/torrents/transmission/completed"
+      },
+      {
+        "label": "Directory for incomplete files",
+        "name": "TRANSMISSION_INCOMPLETE_DIR",
+        "default": "/downloads/torrents/transmission/incomplete"
+      },
+      {
+        "label": "VPN config to use",
+        "name": "OPENVPN_CONFIG",
+        "default": "de_frankfurt"
+      },
+      {
+        "label": "Domain to ping for healtcheck",
+        "name": "HEALTH_CHECK_HOST",
+        "default": "google.com"
+      },
+      {
+        "label": "Reverse Proxy Domain",
+        "name": "VIRTUAL_HOST",
+        "default": "transmission.!domain_alt"
+      },
+      {
+        "label": "Reverse Proxy Port",
+        "name": "VIRTUAL_PORT",
+        "default": "9091"
+      },
+      {
+        "label": "Let's encrypt Domain",
+        "name": "LETSENCRYPT_HOST",
+        "default": "transmission.!domain_alt"
+      }
+    ]
   }
 ]

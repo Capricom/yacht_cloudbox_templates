@@ -5,9 +5,9 @@
     "name": "NAME",
     "description": "DESCRIPTION",
     "logo": "LOGO.png",
-    "categories": [
-      "CATEGORY"
-    ],
+    "image": "hello-world",
+    "network": "cloudbox",
+    "categories": ["CATEGORY1", "CATEGORY2"],
     "platform": "linux",
     "restart_policy": "unless-stopped",
     "ports": [
@@ -28,15 +28,16 @@
     ],
     "env": [
       {
+        "label": "Description",
         "name": "NAME",
-        "label": "LABEL",
         "default": "VALUE"
       },
       {
+        "label": "Description",
         "name": "EXAMPLE",
-        "label": "EXAMPLE",
         "default": "VALUE"
       }
-    ]
+    ],
+    "note": "Additional info"
   }
 ]
