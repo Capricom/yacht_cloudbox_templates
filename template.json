@@ -255,5 +255,74 @@
       }
     ],
     "note": "Work in Progress!"
+  },
+  {
+    "type": 1,
+    "title": "Factorio Server Manager WIP",
+    "name": "factorio-sm",
+    "description": "A tool to help manage Factorio multiplayer servers including mods and save games.",
+    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/FactorioServerManager.png",
+    "image": "ofsm/ofsm:latest",
+    "network": "cloudbox",
+    "categories": ["Gaming"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "Manager WebUI": "8034:80/tcp"
+      },
+      {
+        "Factorio Port": "34197:34197/udp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/data",
+        "bind": "/HOST/data"
+      },
+      {
+        "container": "/config",
+        "bind": "/HOST/config",
+        "readonly": "true"
+      }
+    ],
+    "env": [
+      {
+        "label": "Factorio Server Version",
+        "name": "FACTORIO_VERSION",
+        "default": "latest"
+      },
+      {
+        "label": "RCON password",
+        "name": "RCON_PASS",
+        "default": "!password"
+      },
+      {
+        "label": "WebUI Admin Username",
+        "name": "ADMIN_USER",
+        "default": "!username"
+      },
+      {
+        "label": "WebUI Admin Password",
+        "name": "ADMIN_PASS",
+        "default": "!password"
+      },
+      {
+        "label": "Reverse Proxy Domain",
+        "name": "VIRTUAL_HOST",
+        "default": "factorio-sm.!domain"
+      },
+      {
+        "label": "Reverse Proxy Port",
+        "name": "VIRTUAL_PORT",
+        "default": "8034"
+      },
+      {
+        "label": "Let's encrypt Domain",
+        "name": "LETSENCRYPT_HOST",
+        "default": "factorio-sm.!domain"
+      }
+    ],
+    "note": "Not yet tested. Doesn't have local folder binding."
   }
 ]
