@@ -2,7 +2,7 @@
   {
     "type": 1,
     "title": "TITLE",
-    "name": "NAME",
+    "name": "CONTAINERNAME",
     "description": "DESCRIPTION",
     "logo": "LOGO.png",
     "image": "hello-world",

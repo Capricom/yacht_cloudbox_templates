@@ -2,7 +2,7 @@
   {
     "type": 1,
     "title": "Minecraft Modpack",
-    "name": "minecraft modpack",
+    "name": "minecraft_modpack",
     "description": "Run Minecraft modpacks from curseforge.",
     "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/MinecraftModpack.png",
     "image": "itzg/minecraft-server",
@@ -215,5 +215,45 @@
         "default": "transmission.!domain_alt"
       }
     ]
+  },
+  {
+    "type": 1,
+    "title": "Synclounge WIP",
+    "name": "synclounge",
+    "description": "Synclounge is a third party tool that allows you to watch Plex in sync with your friends/family, wherever you are.",
+    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/Synclougne.png",
+    "image": "ghcr.io/linuxserver/synclounge",
+    "network": "cloudbox",
+    "categories": ["Video", "Media"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "port name": "8088:8088/tcp"
+      }
+    ],
+    "env": [
+      {
+        "label": "Timezone",
+        "name": "TZ",
+        "default": "!TZ"
+      },
+      {
+        "label": "Reverse Proxy Domain",
+        "name": "VIRTUAL_HOST",
+        "default": "synclounge.!domain"
+      },
+      {
+        "label": "Reverse Proxy Port",
+        "name": "VIRTUAL_PORT",
+        "default": "8088"
+      },
+      {
+        "label": "Let's encrypt Domain",
+        "name": "LETSENCRYPT_HOST",
+        "default": "synclounge.!domain"
+      }
+    ],
+    "note": "Work in Progress!"
   }
 ]
