@@ -221,7 +221,7 @@
     "title": "Synclounge WIP",
     "name": "synclounge",
     "description": "Synclounge is a third party tool that allows you to watch Plex in sync with your friends/family, wherever you are.",
-    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/Synclougne.png",
+    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/Synclounge.png",
     "image": "ghcr.io/linuxserver/synclounge",
     "network": "cloudbox",
     "categories": ["Video", "Media"],
