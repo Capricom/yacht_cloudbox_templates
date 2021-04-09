@@ -48,7 +48,7 @@
         "default": "/modpacks/SERVER-FILES.zip"
       }
     ],
-    "note": "Download the server zip into !config/y_minecraft/modpacks, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env."
+    "note": "Download the modpack server zip into !config/y_minecraft/modpacks, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env. Change Containername."
   },
   {
     "type": 1,
@@ -229,7 +229,7 @@
     "restart_policy": "unless-stopped",
     "ports": [
       {
-        "port name": "8088:8088/tcp"
+        "WebUI": "8088:8088/tcp"
       }
     ],
     "env": [
