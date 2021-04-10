@@ -338,10 +338,10 @@
     "restart_policy": "unless-stopped",
     "ports": [
       {
-        "port name": "27015:27015/tcp"
+        "Factorio": "34197:34197/udp"
       },
       {
-        "port name": "34197:34197/udp"
+        "RCON port (optional)": "27015:27015/tcp"
       }
     ],
     "volumes": [
