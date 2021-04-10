@@ -58,7 +58,7 @@
     "logo": "https://raw.githubusercontent.com/SelfhostedPro/selfhosted_templates/master/Images/deemix.png",
     "image": "registry.gitlab.com/bockiii/deemix-docker",
     "network": "cloudbox",
-    "categories": ["Music"],
+    "categories": ["Music", "Media", "Download"],
     "platform": "linux",
     "restart_policy": "unless-stopped",
     "ports": [
@@ -324,5 +324,83 @@
       }
     ],
     "note": "Not yet tested. Doesn't have local folder binding."
+  },
+  {
+    "type": 1,
+    "title": "Factorio",
+    "name": "factorio",
+    "description": "Factorio is a game about building and creating automated factories to produce items of increasing complexity, within an infinite 2D world.",
+    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/Factorio.png",
+    "image": "factoriotools/factorio",
+    "network": "cloudbox",
+    "categories": ["Gaming"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "port name": "27015:27015/tcp"
+      },
+      {
+        "port name": "34197:34197/udp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/factorio",
+        "bind": "!config/factorio"
+      }
+    ],
+    "note": "Untested, but should work."
+  },
+  {
+    "type": 1,
+    "title": "McMyAdmin 2",
+    "name": "mcmyadmin2",
+    "description": "McMyAdmin 2 is the leading web control panel and administration console for Minecraft servers.",
+    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/MCMyAdmin.png",
+    "image": "linuxserver/mcmyadmin2:latest",
+    "categories": ["Gaming"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "WebUI": "8080:8080/tcp",
+        "Minecraft": "25565:25565/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/minecraft",
+        "bind": "!config/y_minecraft/mcmyadmin2"
+      }
+    ],
+    "env": [
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "!PUID"
+      },
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "!PGID"
+      },
+      {
+        "label": "Reverse Proxy Domain",
+        "name": "VIRTUAL_HOST",
+        "default": "mcmyadmin.!domain"
+      },
+      {
+        "label": "Reverse Proxy Port",
+        "name": "VIRTUAL_PORT",
+        "default": "8080"
+      },
+      {
+        "label": "Let's encrypt Domain",
+        "name": "LETSENCRYPT_HOST",
+        "default": "mcmyadmin.!domain"
+      }
+    ],
+    "note": "Untested, but should work"
   }
 ]
