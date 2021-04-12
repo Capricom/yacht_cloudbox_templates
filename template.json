@@ -140,11 +140,6 @@
         "default": "!password"
       },
       {
-        "label": "WebUI Port",
-        "name": "TRANSMISSION_RPC_PORT",
-        "default": "9091"
-      },
-      {
         "label": "WebUI to use",
         "name": "TRANSMISSION_WEB_UI",
         "default": "flood"
@@ -193,11 +188,6 @@
         "label": "VPN config to use",
         "name": "OPENVPN_CONFIG",
         "default": "de_frankfurt"
-      },
-      {
-        "label": "Domain to ping for healtcheck",
-        "name": "HEALTH_CHECK_HOST",
-        "default": "google.com"
       },
       {
         "label": "Reverse Proxy Domain",
