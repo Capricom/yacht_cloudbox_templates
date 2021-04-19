@@ -392,5 +392,51 @@
       }
     ],
     "note": "Untested, but should work"
+  },
+  {
+    "type": 1,
+    "title": "Epic Games Free Game Claimer",
+    "name": "epic-free-games",
+    "description": "Claims weekly free games on Epic Game Store. Requires JSON config.",
+    "logo": "LOGO.png",
+    "image": "charlocharlie/epicgames-freegames",
+    "network": "cloudbox",
+    "categories": ["Gaming"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "Captcha solve WebUI": "3000:3000/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/usr/app/config",
+        "bind": "/opt/y_epic-free-games"
+      }
+    ],
+    "env": [
+      {
+        "label": "Timezone",
+        "name": "TZ",
+        "default": "Europe/Helsinki"
+      },
+      {
+        "label": "Reverse Proxy Domain",
+        "name": "VIRTUAL_HOST",
+        "default": "epic.!domain"
+      },
+      {
+        "label": "Reverse Proxy Port",
+        "name": "VIRTUAL_PORT",
+        "default": "3000"
+      },
+      {
+        "label": "Let's encrypt Domain",
+        "name": "LETSENCRYPT_HOST",
+        "default": "epic.!domain"
+      }
+    ],
+    "note": "You have to fill out the config file first. See https://github.com/claabs/epicgames-freegames-node"
   }
 ]
