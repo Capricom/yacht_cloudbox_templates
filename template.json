@@ -419,7 +419,7 @@
       {
         "label": "Timezone",
         "name": "TZ",
-        "default": "Europe/Helsinki"
+        "default": "!TZ"
       },
       {
         "label": "Reverse Proxy Domain",
