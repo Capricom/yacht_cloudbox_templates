@@ -398,7 +398,7 @@
     "title": "Epic Games Free Game Claimer",
     "name": "epic-free-games",
     "description": "Claims weekly free games on Epic Game Store. Requires JSON config.",
-    "logo": "LOGO.png",
+    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/EpicGames.png",
     "image": "charlocharlie/epicgames-freegames",
     "network": "cloudbox",
     "categories": ["Gaming"],
