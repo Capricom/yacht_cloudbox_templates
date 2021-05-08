@@ -150,11 +150,6 @@
         "default": "!password"
       },
       {
-        "label": "WebUI Port",
-        "name": "TRANSMISSION_RPC_PORT",
-        "default": "9091"
-      },
-      {
         "label": "WebUI to use",
         "name": "TRANSMISSION_WEB_UI",
         "default": "flood"
@@ -203,11 +198,6 @@
         "label": "VPN config to use",
         "name": "OPENVPN_CONFIG",
         "default": "de_frankfurt"
-      },
-      {
-        "label": "Domain to ping for healtcheck",
-        "name": "HEALTH_CHECK_HOST",
-        "default": "google.com"
       },
       {
         "label": "Reverse Proxy Domain",
@@ -412,5 +402,51 @@
       }
     ],
     "note": "Untested, but should work"
+  },
+  {
+    "type": 1,
+    "title": "Epic Games Free Game Claimer",
+    "name": "epic-free-games",
+    "description": "Claims weekly free games on Epic Game Store. Requires JSON config.",
+    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/EpicGames.png",
+    "image": "charlocharlie/epicgames-freegames",
+    "network": "cloudbox",
+    "categories": ["Gaming"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "Captcha solve WebUI": "3000:3000/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/usr/app/config",
+        "bind": "/opt/y_epic-free-games"
+      }
+    ],
+    "env": [
+      {
+        "label": "Timezone",
+        "name": "TZ",
+        "default": "!TZ"
+      },
+      {
+        "label": "Reverse Proxy Domain",
+        "name": "VIRTUAL_HOST",
+        "default": "epic.!domain"
+      },
+      {
+        "label": "Reverse Proxy Port",
+        "name": "VIRTUAL_PORT",
+        "default": "3000"
+      },
+      {
+        "label": "Let's encrypt Domain",
+        "name": "LETSENCRYPT_HOST",
+        "default": "epic.!domain"
+      }
+    ],
+    "note": "You have to fill out the config file first. See https://github.com/claabs/epicgames-freegames-node"
   }
 ]
