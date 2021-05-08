@@ -76,7 +76,17 @@
         "bind": "!music"
       }
     ],
-    "env": [
+    "env": [      
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "!PGID"
+      },      
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "!PUID"
+      },
       {
         "label": "Reverse Proxy Domain",
         "name": "VIRTUAL_HOST",
