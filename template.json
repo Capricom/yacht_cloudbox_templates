@@ -475,7 +475,7 @@
         "bind": "!config/y_spaceengineers/bins/SpaceEngineersDedicated"
       },
       {
-        "container": "/home/se/.steam",
+        "container": "/home/wine/.steam",
         "bind": "!config/y_spaceengineers/bins/steamcmd"
       },
       {
@@ -485,6 +485,18 @@
       {
         "container": "/appdata/space-engineers/Plugins",
         "bind": "!config/y_spaceengineers/config/Plugins"
+      }
+    ],
+    "env": [
+      {
+        "name": "PUID",
+        "label": "PUID",
+        "default": "!PUID"
+      },
+      {
+        "name": "PGID",
+        "label": "PGID",
+        "default": "!PGID"
       }
     ]
   }
