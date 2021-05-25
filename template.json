@@ -448,5 +448,44 @@
       }
     ],
     "note": "You have to fill out the config file first. See https://github.com/claabs/epicgames-freegames-node"
+  },
+  {
+    "type": 1,
+    "title": "Space Engineers Dedicated Server",
+    "name": "space-engineers-server",
+    "description": "Space Engineers server using Wine",
+    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/SpaceEngineers.png",
+    "image": "mmmaxwwwell/space-engineers-dedicated-docker-linux",
+    "network": "cloudbox",
+    "categories": ["Gaming"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "Server Port": "27016:27016/udp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/appdata/space-engineers/World",
+        "bind": "!config/y_spaceengineers/config/World"
+      },
+      {
+        "container": "/appdata/space-engineers/SpaceEngineersDedicated",
+        "bind": "!config/y_spaceengineers/bins/SpaceEngineersDedicated"
+      },
+      {
+        "container": "/home/se/.steam",
+        "bind": "!config/y_spaceengineers/bins/steamcmd"
+      },
+      {
+        "container": "/appdata/space-engineers/SpaceEngineersDedicated/SpaceEngineers-Dedicated.cfg",
+        "bind": "!config/y_spaceengineers/config/SpaceEngineers-Dedicated.cfg"
+      },
+      {
+        "container": "/appdata/space-engineers/Plugins",
+        "bind": "!config/y_spaceengineers/config/Plugins"
+      }
+    ]
   }
 ]
