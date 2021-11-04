@@ -48,7 +48,53 @@
         "default": "/modpacks/SERVER-FILES.zip"
       }
     ],
-    "note": "Download the modpack server zip into !config/y_minecraft/modpacks, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env. Change Containername."
+    "note": "Download the modpack server zip into !config/y_minecraft/modpacks, replace the MODPACKNAME in volumes and SERVER-FILES.zip in env. Change Containername!"
+  },
+  {
+    "type": 1,
+    "title": "Minecraft FTB Modpack",
+    "name": "minecraft_modpack",
+    "description": "Run Minecraft FTB modpacks from curseforge.",
+    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/MinecraftModpack.png",
+    "image": "itzg/minecraft-server",
+    "network": "cloudbox",
+    "categories": ["Gaming"],
+    "platform": "linux",
+    "restart_policy": "unless-stopped",
+    "ports": [
+      {
+        "Server port": "25565:25565/tcp"
+      }
+    ],
+    "volumes": [
+      {
+        "container": "/data",
+        "bind": "!config/y_minecraft/MODPACKNAME"
+      }
+    ],
+    "env": [
+      {
+        "label": "EULA",
+        "name": "EULA",
+        "default": "TRUE"
+      },
+      {
+        "label": "MAX_MEMORY",
+        "name": "MAX_MEMORY",
+        "default": "8G"
+      },
+      {
+        "label": "TYPE",
+        "name": "TYPE",
+        "default": "FTBA"
+      },
+      {
+        "label": "FTB_MODPACK_ID",
+        "name": "FTB_MODPACK_ID",
+        "default": "91"
+      }
+    ],
+    "note": "Search Modpack ID on Official FTB Website. Change Containername!"
   },
   {
     "type": 1,
