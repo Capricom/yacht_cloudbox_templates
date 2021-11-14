@@ -283,7 +283,11 @@
         {
             "container": "/config",
             "bind": "!config/qflood"
-        }
+        },
+        {
+          "container": "/downloads/torrents",
+          "bind": "!downloads/torrents"
+      }
     ],
     "env": [
         {
