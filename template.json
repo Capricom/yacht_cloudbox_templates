@@ -263,6 +263,106 @@
     ]
   },
   {
+    "title": "qBittorent Flood VPN",
+    "name": "qflood-vpn",
+    "image": "hotio/qflood",
+    "description": "qBittorrent client with Flood WebUI and Wireguard VPN",
+    "categories": [
+        "Download",
+        "Torrent"
+    ],
+    "platform": "linux",
+    "note": "Put the wireguard config file \"wg0.conf\" in the \"/config/wireguard\" folder\n\nUNTESTED",
+    "restart_policy": "unless-stopped",
+    "ports": [
+        "8080:8080/tcp",
+        "3000:3000/tcp",
+        "8118:8118/tcp"
+    ],
+    "volumes": [
+        {
+            "container": "/config",
+            "bind": "!config/qflood"
+        }
+    ],
+    "env": [
+        {
+            "name": "PUID",
+            "default": "!PUID",
+            "label": "PUID"
+        },
+        {
+            "name": "PGID",
+            "default": "!PGID",
+            "label": "PGID"
+        },
+        {
+            "name": "VIRTUAL_HOST",
+            "default": "qflood.!domain",
+            "label": "Reverse Proxy Domain"
+        },
+        {
+            "name": "VIRTUAL_PORT",
+            "default": "8080",
+            "label": "Reverse Proxy Port"
+        },
+        {
+            "name": "LETSENCRYPT_HOST",
+            "default": "qflood.!domain",
+            "label": "Let's encrypt Domain"
+        },
+        {
+            "name": "TZ",
+            "default": "!TZ",
+            "label": "Timezone"
+        },
+        {
+            "name": "UMASK",
+            "default": "002",
+            "label": "UMASK"
+        },
+        {
+            "name": "VPN_ENABLED",
+            "default": "true",
+            "label": "VPN Toggle"
+        },
+        {
+            "name": "VPN_LAN_NETWORK",
+            "default": "",
+            "label": "VPN LAN Network"
+        },
+        {
+            "name": "VPN_CONF",
+            "default": "wg0",
+            "label": "VPN Config"
+        },
+        {
+            "name": "PRIVOXY_ENABLED",
+            "default": "false",
+            "label": "Privoxy Toggle"
+        },
+        {
+            "name": "FLOOD_AUTH",
+            "default": "false",
+            "label": "Flood WebUI Authorization"
+        }
+    ],
+    "sysctls": [
+        {
+            "net.ipv4.conf.all.src_valid_mark": "1"
+        },
+        {
+            "net.ipv6.conf.all.disable_ipv6": "0"
+        }
+    ],
+    "cap_add": [
+        "NET_ADMIN"
+    ],
+    "logo": "https://github.com/Capricom/yacht_cloudbox_templates/raw/main/qBittorrent.png",
+    "network": "cloudbox",
+    "type": 1
+  },
+  {
     "type": 1,
     "title": "Synclounge WIP",
     "name": "synclounge",
