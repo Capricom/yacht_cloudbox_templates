@@ -277,7 +277,7 @@
     "ports": [
         "8080:8080/tcp",
         "3000:3000/tcp",
-        "8118:8118/tcp"
+        "8118:8118/udp"
     ],
     "volumes": [
         {
@@ -285,7 +285,7 @@
             "bind": "!config/qflood"
         },
         {
-          "container": "/downloads/torrents",
+          "container": "/mnt/local/downloads/torrents",
           "bind": "!downloads/torrents"
       }
     ],
@@ -307,7 +307,7 @@
         },
         {
             "name": "VIRTUAL_PORT",
-            "default": "8080",
+            "default": "3000",
             "label": "Reverse Proxy Port"
         },
         {
@@ -356,7 +356,7 @@
             "net.ipv4.conf.all.src_valid_mark": "1"
         },
         {
-            "net.ipv6.conf.all.disable_ipv6": "0"
+            "net.ipv6.conf.all.disable_ipv6": "1"
         }
     ],
     "cap_add": [
