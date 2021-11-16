@@ -285,7 +285,7 @@
             "bind": "!config/qflood"
         },
         {
-          "container": "/mnt/local/downloads/torrents",
+          "container": "/downloads/torrents",
           "bind": "!downloads/torrents"
       }
     ],
